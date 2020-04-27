@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-
+          
     runs-on: ubuntu-latest
 
     steps:
@@ -16,11 +16,11 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore src/ProgeSoftware.AspNetCore.Authentication.Static.csproj 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet build src/ProgeSoftware.AspNetCore.Authentication.Static.csproj --configuration Release --no-restore
+#    - name: Test
+#      run: dotnet test --no-restore --verbosity normal
     - name: Pack
       run: dotnet pack src/ProgeSoftware.AspNetCore.Authentication.Static.csproj --output nuget-packages --configuration Release
     - name: Push
