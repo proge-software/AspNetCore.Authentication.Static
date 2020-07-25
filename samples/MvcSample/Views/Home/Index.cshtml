@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h1>User</h1>
+<dl>
+    <dt>Is Authenticated?</dt>
+    <dd>@User.Identity.IsAuthenticated</dd>
+    @if (!string.IsNullOrEmpty(User.Identity.Name))
+    {
+        <dt>Name</dt>
+        <dd>@User.Identity.Name</dd>
+    }
+    @if (!string.IsNullOrEmpty(User.Identity.AuthenticationType))
+    {
+        <dt>Authentication Type</dt>
+        <dd>@User.Identity.AuthenticationType</dd>
+    }
+</dl>
+
+@if (User.Claims.Any())
+{
+    <h1>Claims</h1>
+    <dl>
+        @foreach (var claim in User.Claims)
+        {
+            <dt>@claim.Type</dt>
+            <dd>@claim.Value</dd>
+        }
+    </dl>
+}
