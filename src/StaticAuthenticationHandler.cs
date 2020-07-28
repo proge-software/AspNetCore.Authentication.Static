@@ -72,7 +72,7 @@ namespace ProgeSoftware.AspNetCore.Authentication.Static
             catch { }
             if (string.IsNullOrEmpty(key))
             {
-                key = Options.Identities.FirstOrDefault()?.Key;
+                key = Options.Identities.FirstOrDefault().Key;
             }
             return key;
         }

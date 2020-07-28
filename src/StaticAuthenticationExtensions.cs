@@ -19,6 +19,9 @@ namespace Microsoft.Extensions.DependencyInjection
             => builder.AddStatic(authenticationScheme, displayName: null, configureOptions: configureOptions);
 
         public static AuthenticationBuilder AddStatic(this AuthenticationBuilder builder, string authenticationScheme, string displayName, Action<StaticAuthenticationOptions> configureOptions)
-            => builder.AddScheme<StaticAuthenticationOptions, StaticAuthenticationHandler>(authenticationScheme, displayName, configureOptions);
+        {
+            builder.Services.AddHttpContextAccessor();
+            return builder.AddScheme<StaticAuthenticationOptions, StaticAuthenticationHandler>(authenticationScheme, displayName, configureOptions);
+        }
     }
 }

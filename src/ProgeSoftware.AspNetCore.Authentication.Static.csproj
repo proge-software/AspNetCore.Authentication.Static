@@ -1,10 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>ProgeSoftware.AspNetCore.Authentication.Static</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>akelitz</Authors>
+    <Company>Proge-Software</Company>
     <Description>ASP.NET Core middleware that enables an application to user a static authentication.</Description>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageTags>aspnetcore;authentication;security</PackageTags>
     <IsPackable>true</IsPackable>
+    <RepositoryUrl>https://github.com/proge-software/AspNetCore.Authentication.Static</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
