@@ -1,6 +1,8 @@
 # AspNetCore.Authentication.Static
 This repo contains the security and authorization Static middleware for [ASP.NET Core](https://github.com/dotnet/aspnetcore) from [Proge-Software](https://progesoftware.it).
 
+![NuGet](https://github.com/proge-software/AspNetCore.Authentication.Static/workflows/NuGet%20deployment/badge.svg)
+
 ## Why?
 Whether you are doing exploratory or automatic integration tests, testing the authentication of an ASP.NET Core application can be complex and ineffective.
 
