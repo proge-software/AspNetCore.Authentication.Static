@@ -351,3 +351,5 @@ MigrationBackup/
 
 # ProgeSoftware.AspNetCore.Authentication.Static
 *.sln
+
+nuget.config

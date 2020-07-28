@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
@@ -69,6 +70,10 @@ namespace ProgeSoftware.AspNetCore.Authentication.Static
                 }
             }
             catch { }
+            if (string.IsNullOrEmpty(key))
+            {
+                key = Options.Identities.FirstOrDefault().Key;
+            }
             return key;
         }
     }
